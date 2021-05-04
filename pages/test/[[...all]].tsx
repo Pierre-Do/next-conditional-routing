@@ -8,6 +8,17 @@ import {
   DialogTitle,
 } from "@material-ui/core";
 
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { all: ["index"] } }, { params: { all: ["modal"] } }],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  return { props: {} };
+}
+
 export default function TestPage(): JSX.Element {
   const router = useRouter();
 
